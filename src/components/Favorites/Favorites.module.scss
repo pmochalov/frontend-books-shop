@@ -1,0 +1,19 @@
+.favorites {
+    @apply grid grid-cols-1 gap-4;
+
+    &__item {
+        @apply grid gap-4 grid-cols-1 lg:grid-cols-[100px_1fr] grid-rows-1 border p-2 rounded;
+    }
+
+    &__link {
+        @apply text-xl;
+    }
+
+    &__title {
+        @apply text-xl;
+    }
+
+    &__button {
+        @apply py-4;
+    }
+}

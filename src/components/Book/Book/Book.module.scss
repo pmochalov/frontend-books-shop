@@ -1,0 +1,23 @@
+.book {
+    @apply grid grid-cols-1 grid-rows-[auto_auto_auto] gap-6;
+    @apply md:grid-cols-2 md:grid-rows-[auto_auto] md:gap-8;
+    @apply lg:grid-cols-3 lg:grid-rows-1 lg:gap-16;
+
+    &__gallery {
+        @apply col-start-1 col-end-2 row-start-1 row-end-2;
+        @apply md:col-start-1 md:col-end-2 md:row-start-1 md:row-end-2;
+        @apply lg:col-start-1 lg:col-end-2 lg:row-start-1 lg:row-end-2;
+    }
+
+    &__content {
+        @apply col-start-1 col-end-2 row-start-2 row-end-3;
+        @apply md:col-start-2 md:col-end-3 md:row-start-1 md:row-end-2;
+        @apply lg:col-start-2 lg:col-end-3 lg:row-start-1 lg:row-end-2;
+    }
+
+    &__actions {
+        @apply col-start-1 col-end-2 row-start-3 row-end-4;
+        @apply md:col-start-1 md:col-end-3 md:row-start-2 md:row-end-3;
+        @apply lg:col-start-3 lg:col-end-3 lg:row-start-1 lg:row-end-2;
+    }
+}

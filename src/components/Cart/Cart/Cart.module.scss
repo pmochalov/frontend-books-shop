@@ -1,0 +1,15 @@
+.cart {
+    @apply grid grid-cols-1 lg:grid-cols-[1fr_400px] gap-4;
+
+    &__item {
+        @apply grid gap-4 grid-cols-1 lg:grid-cols-[100px_1fr_150px] grid-rows-1 border p-2 rounded;
+    }
+
+    &__items {
+        @apply grid grid-cols-1 gap-4;
+    }
+
+    &__order {
+        @apply self-start border rounded p-4;
+    }
+}

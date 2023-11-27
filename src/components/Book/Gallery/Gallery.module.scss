@@ -1,0 +1,18 @@
+.gallery {
+
+    &__cover {
+        @apply border p-2 rounded
+    }
+
+    &__items {
+        @apply grid gap-1 grid-cols-6 mt-6;
+    }
+
+    &__item {        
+        @apply cursor-pointer p-2
+    }
+
+    &__item_active {        
+        @apply border border-green-600 rounded
+    }    
+}

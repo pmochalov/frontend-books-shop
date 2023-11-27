@@ -1,0 +1,15 @@
+.counter {
+
+
+    &__total {
+        @apply py-3 flex justify-center text-xl font-bold;
+    }
+
+    &__buttons {
+        @apply grid grid-cols-[auto_auto_auto] gap-3 bg-slate-50;
+    }
+
+    &__total {
+        @apply p-2 flex justify-center;
+    }
+}

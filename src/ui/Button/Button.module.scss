@@ -1,0 +1,49 @@
+.button {
+    @apply rounded-lg px-8 py-4 bg-slate-100 text-black;
+
+    &[disabled] {
+        @apply text-opacity-50
+    }
+
+    &:hover {
+        @apply bg-slate-200;
+    }
+
+    &_theme-default {
+        @apply bg-slate-400 text-black;
+
+        &:hover {
+            @apply bg-slate-500;
+        }        
+    }
+
+    &_small {
+        @apply px-3 py-2 text-sm;
+    }
+
+    &_slate {
+        @apply bg-slate-200 text-black;
+
+        &:hover {
+            @apply bg-slate-300;
+        }          
+    }
+
+    &_black {
+        @apply bg-black text-white;
+
+        &:hover {
+            @apply bg-slate-900;
+        }          
+    }
+
+    &_green {
+        @apply bg-green-700 text-white;
+
+        &:hover {
+            @apply bg-green-800;
+        }  
+    }
+
+
+}

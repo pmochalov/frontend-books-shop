@@ -1,0 +1,11 @@
+.layout {
+    @apply container px-2 py-8 bg-slate-300;
+
+    &__wrapper {
+        @apply p-4 md:p-16 rounded-[16px] md:rounded-[24px] bg-white;
+    }
+
+    &__content {
+        @apply py-6 md:py-10;
+    }
+}

@@ -1,0 +1,38 @@
+.card {
+    @apply border rounded p-4;
+    display: grid;
+    grid-template-areas: "image" "title" "price" "buttons";
+    grid-template-columns: 1fr;
+    grid-template-rows: auto;
+    align-items: space-between;
+    row-gap: 16px;
+
+    &:hover {
+        @apply text-blue-500 border-green-600;
+    }
+
+    &__image {
+        grid-area: image;
+        @apply w-full h-64;
+
+        img {
+            @apply h-full w-auto;
+        }
+    }
+
+    &__title {
+        grid-area: title;
+        @apply text-lg;
+    }
+
+    &__price {
+        grid-area: price;
+        @apply text-2xl font-bold;
+    }
+
+    &__buttons {
+        grid-area: buttons;
+        @apply grid grid-cols-2 gap-2;
+        align-self: self-end;
+    }
+}

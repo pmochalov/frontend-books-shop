@@ -1,0 +1,7 @@
+.description {
+    @apply grid gap-4;
+
+    &__title {
+        @apply font-bold mr-2;
+    }
+}

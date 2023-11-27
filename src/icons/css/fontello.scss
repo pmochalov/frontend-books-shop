@@ -1,0 +1,30 @@
+@font-face {
+  font-family: 'fontello';
+  src: url('../font/fontello.woff2?22650131') format('woff2'),
+       url('../font/fontello.woff?22650131') format('woff');
+  font-weight: normal;
+  font-style: normal;
+}
+[class^="icon-"]:before, [class*=" icon-"]:before {
+  font-family: "fontello";
+  font-style: normal;
+  font-weight: normal;  
+
+  display: inline-block;
+  text-decoration: inherit;
+  width: 1em;
+  margin-right: .2em;
+  text-align: center;
+
+  /* For safety - reset parent styles, that can break glyph codes*/
+  font-variant: normal;
+  text-transform: none;
+
+  /* fix buttons height, for twitter bootstrap */
+  line-height: 1em;
+}
+
+.icon-heart:before { content: '\e800'; } /* '' */
+.icon-heart-empty:before { content: '\e801'; } /* '' */
+.icon-basket:before { content: '\e803'; } /* '' */
+.icon-cancel:before { content: '\e802'; } /* '' */
