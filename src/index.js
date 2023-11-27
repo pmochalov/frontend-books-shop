@@ -26,7 +26,10 @@ const router = createBrowserRouter(
             <Route path='cart' element={<Cart />}></Route>
             <Route path='book/:bookId' element={<Book />}></Route>
         </Route>
-    )
+    ),
+    {
+      basename: process.env.REACT_APP_BASENAME,
+    }
 );
 
 ReactDOM.createRoot(document.getElementById('root')).render(

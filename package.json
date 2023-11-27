@@ -19,8 +19,7 @@
   },
   "scripts": {
     "start": "env-cmd -f .env.development react-scripts start",
-    "build": "env-cmd -f .env.production react-scripts build",
-    "eslint": "eslint"
+    "build": "env-cmd -f .env.production react-scripts build"
   },
   "browserslist": {
     "production": [
