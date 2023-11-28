@@ -1,6 +1,6 @@
 import s from './Header.module.scss';
 
-import { Link, NavLink } from 'react-router-dom';
+import { NavLink } from 'react-router-dom';
 
 import { useSelector } from 'react-redux';
 
@@ -11,29 +11,53 @@ const getLinkClass = ({ isActive }) => {
 };
 
 const Header = () => {
-    const { totalPrice } = useSelector(state => state.cart.data);
-    const {count} = useSelector(state => state.favorites.data);
+    const { totalPrice } = useSelector((state) => state.cart.data);
+    const { count } = useSelector((state) => state.favorites.data);
 
     return (
         <header className={s.header}>
             <div className={s.header__logo}>
-                <NavLink to='/' className={s.link}>
-                    <span>
-                        FrontEnd<span className={s['word-part']}>Books</span>
-                    </span>
-                    <span>книжный интернет-магазин</span>
-                </NavLink>
+                <Logo />
             </div>
             <div className={s.header__info}>
-                <NavLink to='/favorites' className={getLinkClass}>
-                    <figure className='icon icon-heart text-red-400'></figure>Избранное <sup className='text-gray-600'>{count}</sup>
-                </NavLink>
-                <NavLink to='/cart' className={getLinkClass}>
-                    {totalPrice === 0 && <><figure className='icon icon-basket text-green-600'></figure>Корзина</>}
-                    {totalPrice > 0 && <><figure className='icon icon-basket text-green-600'></figure> {totalPrice} ₽</>}                    
-                </NavLink>
+                <FavoritesLink count={count} />
+                <CartLink totalPrice={totalPrice} />
             </div>
         </header>
+    );
+};
+
+const Logo = () => {
+    return (
+        <NavLink to='/' className={s.link}>
+            <span>
+                FrontEnd<span className={s['word-part']}>Books</span>
+            </span>
+            <span>книжный интернет-магазин</span>
+        </NavLink>
+    );
+};
+
+const FavoritesLink = ({ count }) => {
+    return (
+        <NavLink to='/favorites' className={getLinkClass}>
+            <figure className='icon icon-heart text-red-400'></figure>
+            <span className='hidden lg:inline-block'>Избранное</span>{' '}
+            <sup className='text-gray-600'>{count}</sup>
+        </NavLink>
+    );
+};
+
+const CartLink = ({ totalPrice }) => {
+    const text = totalPrice === 0 ? 'Корзина' : `${totalPrice} ₽`;
+
+    return (
+        <NavLink to='/cart' className={getLinkClass}>
+            <>
+                <figure className='icon icon-basket text-green-600'></figure>
+                {text}
+            </>
+        </NavLink>
     );
 };
 
