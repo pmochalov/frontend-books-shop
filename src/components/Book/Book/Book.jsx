@@ -1,20 +1,24 @@
-import React from 'react';
-import { useParams } from 'react-router-dom';
-import { useDispatch, useSelector } from 'react-redux';
-import { fetchBook, resetBookData } from '../../../slices/bookSlice';
-import { Gallery } from '../Gallery/Gallery';
-import { Actions } from '../Actions/Actions';
+import React from "react";
+import { useParams } from "react-router-dom";
+import { useDispatch, useSelector } from "react-redux";
+import { fetchBook, resetBookData } from "../../../slices/bookSlice";
+import { Gallery } from "../Gallery/Gallery";
+import { Actions } from "../Actions/Actions";
 
-import { PageTitle } from '../../../ui/PageTitle/PageTitle';
-import { Description, DescriptionItem } from '../Description/Description';
+import { PageTitle } from "../../../ui/PageTitle/PageTitle";
+import { Description, DescriptionItem } from "../Description/Description";
 
-import s from './Book.module.scss';
+import s from "./Book.module.scss";
 
 const Book = () => {
     const { bookId } = useParams();
 
     const dispatch = useDispatch();
-    const bookData = useSelector((state) => state.book.data);
+    const { data: bookData, status } = useSelector((state) => state.book);
+
+    if (status === "failed") {
+        throw Error("Книга не найдена.");
+    }
 
     React.useEffect(() => {
         dispatch(fetchBook(bookId));
@@ -47,7 +51,7 @@ const Book = () => {
                     </Description>
                 </div>
                 <div className={s.book__actions}>
-                    <Actions bookId={bookId}/>
+                    <Actions bookId={bookId} />
                 </div>
             </div>
         </div>

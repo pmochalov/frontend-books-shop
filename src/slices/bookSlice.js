@@ -5,6 +5,7 @@ export const fetchBook = createAsyncThunk(
     async (bookId) => {
         const response = await fetch(process.env.REACT_APP_API_URL + '/book/' + bookId);
         const data = await response.json();
+
         return data;
     }
 );
@@ -47,5 +48,5 @@ export const bookSlice = createSlice({
     }
 });
 
-export const {resetBookData} = bookSlice.actions;
+export const { resetBookData } = bookSlice.actions;
 export default bookSlice.reducer;
