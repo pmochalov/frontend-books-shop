@@ -7,6 +7,7 @@ import { Books } from './components/Books/Books';
 import { Favorites } from './components/Favorites/Favorites';
 import { Cart } from './components/Cart/Cart/Cart';
 import { Book } from './components/Book/Book/Book';
+import { Error } from './components/Error/Error';
 
 import {
     createRoutesFromElements,
@@ -20,15 +21,15 @@ import { Provider } from 'react-redux';
 
 const router = createBrowserRouter(
     createRoutesFromElements(
-        <Route path='/' element={<Layout />}>
-            <Route index element={<Books />}></Route>
+        <Route element={<Layout />} errorElement={<Error />}>
+            <Route index element={<Books errorElement={<Error />} />}></Route>
             <Route path='favorites' element={<Favorites />}></Route>
             <Route path='cart' element={<Cart />}></Route>
             <Route path='book/:bookId' element={<Book />}></Route>
         </Route>
     ),
     {
-      basename: process.env.REACT_APP_BASENAME,
+        basename: process.env.REACT_APP_BASENAME,
     }
 );
 
