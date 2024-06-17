@@ -6,7 +6,7 @@
 
 ## Стек
 - React.js
-- Redux Tooltip
+- Redux Toolkip
 - Redux Thunk
 - React Router
 - Tailwind CSS
